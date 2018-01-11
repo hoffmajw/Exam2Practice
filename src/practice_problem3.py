@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 3.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Jaxon Hoffman.
+"""  # Done 1.
 
 ########################################################################
 # Students:
@@ -155,8 +155,17 @@ def practice_problem3a(circles):
     Type hints:
       :type sequence: [rg.Circle]
     """
+    product = 1
+
+    if len(circles) == 0:
+        return product
+    else:
+        for k in range(len(circles)):
+            product *= circles[k].center.x
+
+    return product
     ####################################################################
-    # TODO: 2. Implement and test this function.
+    # Done 2
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -265,8 +274,15 @@ def practice_problem3b(sequence):
     Type hints:
       :type: sequence: list    or tuple or string
     """
+
+    test = sequence[len(sequence) - 1]
+
+    for k in range(len(sequence) - 1):
+        if sequence[k] == test:
+            return True
+    return False
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # Done 3
     #     The testing code is already written for you (above).
     #
     # IMPLEMENTATION REQUIREMENT:  You are NOT allowed to use the
@@ -353,8 +369,16 @@ def practice_problem3c(sequence):
     Type hints:
       :type: sequence: list    or tuple or string
     """
+
+    indices = []
+
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            indices = indices + [k]
+
+    return indices
     ####################################################################
-    # TODO: 4. Implement and test this function.
+    # Done 4.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -435,8 +459,13 @@ def practice_problem3d(sequence):
     Type hints:
       :type: sequence: list    or tuple or string
     """
+
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            return k
+    return -1
     ####################################################################
-    # TODO: 5. Implement and test this function.
+    # Done 5
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -446,7 +475,7 @@ def practice_problem3d(sequence):
 
 
     ####################################################################
-    # TODO: 6. Just ABOVE this TODO, you should have implemented
+    # Done 6
     #     a solution for the   practice_problem3d   function.
     #     Here, put ANOTHER solution, as follows:
     #
@@ -460,6 +489,10 @@ def practice_problem3d(sequence):
     #
     #          This solution should *** HAVE NO LOOP (no FOR). ***
     ####################################################################
+
+    indices = run_test_practice_problem3c(sequence)
+
+    return indices[0]
 
 
 def run_test_practice_problem3e():
@@ -521,8 +554,15 @@ def practice_problem3e(sequence):
     Type hints:
       :type sequence: list(float)    or tuple(float)
     """
+    sums = 0
+
+    for k in range(len(sequence)):
+        if k % 2 == 0:
+            sums += sequence[k]
+
+    return sums
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # Done 7
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
